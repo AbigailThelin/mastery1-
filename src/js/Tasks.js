@@ -45,11 +45,11 @@ export default class tasks extends Component{
 
 	completed(i){
 		$(document).ready(function() {
-			let box = $('a')
+			let box = $('bjhg')
 			$('.box').on('click', function() {
 				$(this).toggleClass('toggle')
 			})
-		});
+        });
 	}
 
 
