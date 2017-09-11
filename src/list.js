@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Complete from './complete'
+
+
 
 export default function Lists(props){
     var list= props.list.map((item, i)=>{

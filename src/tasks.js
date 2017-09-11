@@ -16,9 +16,9 @@ export default class tasks extends Component{
         }
         this.handleChange = this.handleChange.bind(this);
         this.addToToDoList = this.addToToDoList.bind(this);
-        // this.clear = this.clear.bind(this)
+        console.log(this.state.task)
     }
-
+list
 
     handleChange(e) {
         this.setState({ task: e.target.value})
@@ -33,16 +33,11 @@ export default class tasks extends Component{
         }
     }
     
+    
 
 
 
     render(){
-
-        // const todoList = this.state.list.map((item, index) => {
-        //     return <complete 
-        //             key={index} 
-        //             item={item}/>
-        // })
 
         return(
             <div className="box">
@@ -54,5 +49,6 @@ export default class tasks extends Component{
             </div>
             
         )
+
     }
 }
