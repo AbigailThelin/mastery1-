@@ -18,7 +18,8 @@ export default class tasks extends Component{
         this.handleChange = this.handleChange.bind(this);
 		this.addToToDoList = this.addToToDoList.bind(this);
 		this.clearItem = this.clearItem.bind(this);
-		this.completed = this.completed.bind(this);
+        this.completed = this.completed.bind(this);
+        this.disable = this.disable.bind(this)
     }
 
 
@@ -45,12 +46,16 @@ export default class tasks extends Component{
 
 	completed(i){
 		$(document).ready(function() {
-			let box = $('bjhg')
+			// let box = $('bjhg')
 			$('.box').on('click', function() {
 				$(this).toggleClass('toggle')
-			})
-        });
-	}
+            })
+        });      
+    }
+    
+    disable(){
+
+    }
 
 
 
@@ -62,7 +67,7 @@ export default class tasks extends Component{
                 <Button action={this.addToToDoList.bind(this, this.state.task)}>
                 <button>Add a Task</button>
                 </Button>
-				<List clearItem={this.clearItem} completed={this.completed} list={this.state.toDoList} />
+				<List clearItem={this.clearItem} completed={this.completed} disable={this.disable}list={this.state.toDoList} />
 			</div>
 		)}
 }
