@@ -46,8 +46,7 @@ export default class tasks extends Component{
 
 	completed(i){
 		$(document).ready(function() {
-			// let box = $('bjhg')
-			$('.box').on('click', function() {
+			$('.list').on('click', function() {
 				$(this).toggleClass('toggle')
             })
         });      
@@ -67,7 +66,7 @@ export default class tasks extends Component{
                 <Button action={this.addToToDoList.bind(this, this.state.task)}>
                 <button>Add a Task</button>
                 </Button>
-				<List clearItem={this.clearItem} completed={this.completed} disable={this.disable}list={this.state.toDoList} />
+				<List className="list" clearItem={this.clearItem} completed={this.completed} disable={this.disable}list={this.state.toDoList} />
 			</div>
 		)}
 }

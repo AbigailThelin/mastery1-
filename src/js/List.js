@@ -7,7 +7,7 @@ export default function Lists(props){
         return <li className="list-item"  
         key={i} id={i}> {item} 
          <button className="b" onClick={_=>props.clearItem(i)}>Delete</button> 
-         <button className="a" onClick={_=> props.completed(i)} >Complete</button>
+         <button className="a" onClick={_=> props.completed(i)}>Complete</button>
         </li>
     }
 )

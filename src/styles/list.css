@@ -1,7 +1,8 @@
 .toggle{
   text-decoration: line-through;
+   /* display: none;  */
 }
 
 .b{
   margin: 10px;
-}
+ } 
