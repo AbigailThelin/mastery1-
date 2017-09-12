@@ -14,12 +14,12 @@ export default class tasks extends Component{
         this.state={
             task: '',
             toDoList: [],
+            disabled: false
         }
         this.handleChange = this.handleChange.bind(this);
 		this.addToToDoList = this.addToToDoList.bind(this);
 		this.clearItem = this.clearItem.bind(this);
         this.completed = this.completed.bind(this);
-        this.disable = this.disable.bind(this)
     }
 
 
@@ -33,7 +33,7 @@ export default class tasks extends Component{
             toDoList: this.state.toDoList.concat([this.state.task]), 
             task: ''
         })
-		}
+        }
 	}
 	
 	clearItem(i){
@@ -46,17 +46,14 @@ export default class tasks extends Component{
 
 	completed(i){
 		$(document).ready(function() {
-			$('.list').on('click', function() {
+			$('.list', '.a').on('click', function() {
 				$(this).toggleClass('toggle')
             })
-        });      
+        });     
+        this.setState({
+            disabled: true
+        })
     }
-    
-    disable(){
-
-    }
-
-
 
     render(){
 
