@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import List from './List'
 import Button from './button.js'
-import $ from "jquery";
+// import $ from "jquery";
 // import complete from './complete.js'
 
 
@@ -45,15 +45,10 @@ export default class tasks extends Component{
 	}
 
 	completed(i){
-		$(document).ready(function() {
-			$('.list', '.a').on('click', function() {
-				$(this).toggleClass('toggle')
-            })
-        });     
-        this.setState({
-            disabled: true
-        })
-    }
+        let dec = document.getElementById(i).style.textDecoration = "line-through";
+        dec = i ? this.disable : null;
+}
+    
 
     render(){
 
