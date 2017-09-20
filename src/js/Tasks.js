@@ -13,7 +13,7 @@ export default class tasks extends Component{
 
         this.state={
             task: '',
-            toDoList: [],
+            toDoList: [{text: 'blah', completed: false}, {text: 'blah', completed: false},{text: 'blah', completed: false}],
             disabled: false
         }
         this.handleChange = this.handleChange.bind(this);
@@ -29,8 +29,14 @@ export default class tasks extends Component{
 
     addToToDoList(item){
         if(this.state.task){
+            let newItem = {
+                text:this.state.task,
+                completed: false,
+            }
+            let newArr = this.state.toDoList.slice()
+            newArr.push(newItem)
             this.setState({
-            toDoList: this.state.toDoList.concat([this.state.task]), 
+            toDoList: newArr, 
             task: ''
         })
         }
@@ -45,8 +51,13 @@ export default class tasks extends Component{
 	}
 
 	completed(i){
-        let dec = document.getElementById(i).style.textDecoration = "line-through";
-        dec = i ? this.disable : null;
+        // let dec = document.getElementById(i).style.textDecoration = "line-through";
+            let tempArr = this.state.toDoList.slice()
+            tempArr[i].completed=true;
+            this.setState({
+                toDoList: tempArr
+            })
+            
 }
     
 
@@ -58,7 +69,7 @@ export default class tasks extends Component{
                 <Button action={this.addToToDoList.bind(this, this.state.task)}>
                 <button>Add a Task</button>
                 </Button>
-				<List className="list" clearItem={this.clearItem} completed={this.completed} disable={this.disable}list={this.state.toDoList} />
+				<List className="list" clearItem={this.clearItem} completed={this.completed} list={this.state.toDoList} />
 			</div>
 		)}
 }
