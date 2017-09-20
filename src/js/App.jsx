@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>React Mastery Challenge part 1</h2>
+          <h2 style={{color: 'grey'}}>React Mastery Challenge part 1</h2>
         </div>
           <Tasks />
       </div>

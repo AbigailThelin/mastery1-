@@ -13,7 +13,7 @@ export default class tasks extends Component{
 
         this.state={
             task: '',
-            toDoList: [{text: 'blah', completed: false}, {text: 'blah', completed: false},{text: 'blah', completed: false}],
+            toDoList: [{text: '', completed: false}],
             disabled: false
         }
         this.handleChange = this.handleChange.bind(this);
